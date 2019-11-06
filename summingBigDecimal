@@ -1,0 +1,3 @@
+Map<String, BigDecimal> result = data().stream()
+               .collect(Collectors.groupingBy(Emp::getDept, 
+                        Collectors.mapping(Emp::getSalary, Collectors.reducing(BigDecimal.ZERO, BigDecimal::add))));  
